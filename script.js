@@ -25,7 +25,7 @@ mobileMenu?.querySelectorAll('a').forEach(link=>{
   });
 });
 
-const revealItems=[...document.querySelectorAll('.section-head,.feature-strip article,.segment-card,.experience-visual,.experience-copy,.news-card')];
+const revealItems=[...document.querySelectorAll('.section-head,.feature-strip article,.segment-card,.experience-visual,.experience-copy,.tour360-copy,.tour360-frame,.news-card')];
 if('IntersectionObserver'in window){
   revealItems.forEach(el=>el.classList.add('reveal'));
   const observer=new IntersectionObserver(entries=>{
