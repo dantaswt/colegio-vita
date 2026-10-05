@@ -1,0 +1,261 @@
+:root{
+  --green:#0f5d4e;
+  --green-dark:#073f35;
+  --lime:#d9ef72;
+  --cream:#f5f1e8;
+  --ink:#14201c;
+  --muted:#66716c;
+  --white:#fff;
+  --line:rgba(20,32,28,.12);
+  --shadow:0 24px 80px rgba(17,44,35,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"DM Sans",system-ui,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.skip-link{position:fixed;left:16px;top:-60px;background:#fff;padding:12px 16px;z-index:9999}
+.skip-link:focus{top:16px}
+
+.site-header{
+  position:fixed;inset:0 0 auto;
+  z-index:1000;
+  padding:16px 0;
+  transition:.3s ease;
+}
+.site-header.is-scrolled{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(18px);
+  box-shadow:0 1px 0 rgba(20,32,28,.08);
+}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand img{width:116px;height:auto}
+.site-header:not(.is-scrolled) .brand img{filter:brightness(0) invert(1)}
+.desktop-nav{display:flex;gap:30px;align-items:center}
+.desktop-nav a,.text-link{font-size:14px;font-weight:600}
+.site-header:not(.is-scrolled) .desktop-nav a,
+.site-header:not(.is-scrolled) .text-link{color:#fff}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.btn{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 20px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+  transition:.25s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-light{background:#fff;color:var(--green-dark)}
+.btn-ghost-light{border:1px solid rgba(255,255,255,.55);color:#fff}
+.menu-btn{
+  display:none;
+  width:46px;height:46px;border:0;border-radius:50%;
+  background:rgba(255,255,255,.15);
+  align-items:center;justify-content:center;flex-direction:column;gap:6px
+}
+.menu-btn span{display:block;width:20px;height:2px;background:#fff;transition:.25s}
+.site-header.is-scrolled .menu-btn{background:#eef3ef}
+.site-header.is-scrolled .menu-btn span{background:var(--green-dark)}
+.mobile-menu{
+  display:none;
+  position:absolute;
+  left:20px;right:20px;top:76px;
+  background:#fff;border-radius:24px;padding:24px;
+  box-shadow:var(--shadow);
+}
+.mobile-menu.open{display:grid;gap:18px}
+.mobile-menu a{font-weight:700}
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  overflow:hidden;
+}
+.hero-media{
+  position:absolute;inset:0;
+  background:
+    url("https://vitaeduca.com.br/wp-content/uploads/2026/07/bc96a097-3cae-45a7-9154-a68e5f13b7ed-scaled.png")
+    center/cover no-repeat;
+  transform:scale(1.03);
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(4,39,32,.82) 0%,rgba(4,39,32,.48) 45%,rgba(4,39,32,.14) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.34));
+}
+.hero-content{position:relative;z-index:2;padding-top:120px;padding-bottom:150px;max-width:840px;margin-left:max(20px,calc((100vw - 1180px)/2))}
+.eyebrow,.section-kicker{
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:12px;
+  font-weight:800;
+}
+.hero h1{
+  margin:18px 0 22px;
+  font-family:"Manrope",sans-serif;
+  font-size:clamp(48px,7vw,92px);
+  line-height:.96;
+  letter-spacing:-.055em;
+  max-width:900px;
+}
+.hero h1 span{color:var(--lime)}
+.hero p{font-size:clamp(17px,2vw,21px);line-height:1.55;max-width:680px;color:rgba(255,255,255,.88)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-bottom{
+  position:absolute;z-index:3;bottom:34px;left:50%;transform:translateX(-50%);
+  display:grid;grid-template-columns:1fr 1fr auto;gap:26px;align-items:end
+}
+.hero-stat{display:flex;gap:12px;align-items:flex-end;border-top:1px solid rgba(255,255,255,.32);padding-top:14px}
+.hero-stat strong{font:800 30px "Manrope";color:var(--lime)}
+.hero-stat span{font-size:12px;max-width:160px;color:rgba(255,255,255,.72)}
+.scroll-hint{display:flex;align-items:center;gap:12px;font-size:12px}
+.scroll-hint i{width:40px;height:40px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:grid;place-items:center;font-style:normal}
+
+.section{padding:112px 0}
+.intro{background:var(--cream)}
+.intro-grid,.section-head{display:grid;grid-template-columns:1.4fr .8fr;gap:80px;align-items:end}
+.section-kicker{color:var(--green)}
+h2{
+  font-family:"Manrope",sans-serif;
+  font-size:clamp(38px,5vw,66px);
+  line-height:1.02;
+  letter-spacing:-.05em;
+  margin:14px 0 0;
+}
+.intro-copy p,.section-head>p,.experience-copy>p{
+  color:var(--muted);font-size:17px;line-height:1.7;margin:0 0 26px
+}
+.arrow-link{display:inline-flex;align-items:center;gap:10px;font-weight:800;color:var(--green)}
+.feature-strip{margin-top:68px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.feature-strip article{padding:28px 30px 0 0}
+.feature-strip article+article{border-left:1px solid var(--line);padding-left:30px}
+.feature-strip span{font:700 12px "Manrope";color:var(--green)}
+.feature-strip h3{font:700 22px "Manrope";margin:18px 0 10px}
+.feature-strip p{color:var(--muted);line-height:1.6}
+
+.segments{background:#fff}
+.section-head{margin-bottom:42px}
+.segment-grid{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:350px 350px;gap:18px}
+.segment-card{position:relative;overflow:hidden;border-radius:26px;min-height:280px;color:#fff}
+.segment-card--large{grid-row:1 / span 2}
+.segment-card--wide{grid-column:2}
+.segment-photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease}
+.segment-card:hover .segment-photo{transform:scale(1.045)}
+.photo-infantil{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/FAMILIA-1.png")}
+.photo-iniciais{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/animated.png")}
+.photo-finais{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2026/07/Untitled.png")}
+.photo-medio{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/maps-transperante.png")}
+.segment-gradient{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(3,30,25,.85))}
+.segment-content{position:absolute;left:26px;right:26px;bottom:24px}
+.segment-content span{font-size:12px;font-weight:800;color:var(--lime)}
+.segment-content h3{font:800 28px "Manrope";margin:8px 0}
+.segment-content p{margin:0 0 14px;color:rgba(255,255,255,.82);max-width:420px}
+.segment-content b{font-size:13px}
+
+.experience{background:var(--green-dark);color:#fff}
+.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.experience-visual{position:relative}
+.experience-image{
+  min-height:650px;border-radius:30px;
+  background:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/vita-colegio.png") center/cover no-repeat;
+}
+.floating-note{
+  position:absolute;right:-22px;bottom:30px;
+  width:230px;background:var(--lime);color:var(--green-dark);
+  padding:24px;border-radius:20px;box-shadow:var(--shadow)
+}
+.floating-note strong{display:block;font:800 22px "Manrope";margin-bottom:4px}
+.experience-copy .section-kicker{color:var(--lime)}
+.experience-copy>p{color:rgba(255,255,255,.7);margin-top:24px}
+.experience-list{margin-top:28px;border-top:1px solid rgba(255,255,255,.14)}
+.experience-list a{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14);font-weight:700}
+.experience-list b{color:var(--lime)}
+
+.quote-section{padding:90px 0;background:var(--lime)}
+.quote-grid{display:grid;grid-template-columns:120px 1fr;gap:30px}
+.quote-mark{font:800 120px/1 "Manrope";color:var(--green)}
+blockquote{margin:0;font:700 clamp(30px,4vw,54px)/1.15 "Manrope";letter-spacing:-.04em;max-width:980px}
+blockquote footer{margin-top:24px;font:600 14px "DM Sans";letter-spacing:0;color:var(--green-dark)}
+
+.news{background:#f8faf8}
+.news-head{align-items:center}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.news-card{background:#fff;border-radius:24px;padding:14px 14px 24px;box-shadow:0 12px 40px rgba(12,45,35,.06)}
+.news-image{height:250px;border-radius:18px;background-size:cover;background-position:center}
+.news-1{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/animated.png")}
+.news-2{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/vita-colegio.png")}
+.news-3{background-image:url("https://vitaeduca.com.br/wp-content/uploads/2023/08/FAMILIA-1.png")}
+.news-meta{margin-top:18px;color:var(--green);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.news-card h3{font:700 22px/1.3 "Manrope";margin:10px 0 18px}
+.news-card>a{font-weight:800;color:var(--green);font-size:14px}
+
+.visit{position:relative;min-height:620px;display:flex;align-items:center;color:#fff;overflow:hidden}
+.visit-bg{position:absolute;inset:0;background:url("https://vitaeduca.com.br/wp-content/uploads/2026/07/bc96a097-3cae-45a7-9154-a68e5f13b7ed-scaled.png") center/cover no-repeat}
+.visit-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,40,33,.88),rgba(3,40,33,.28))}
+.visit-content{position:relative;z-index:2;max-width:760px}
+.section-kicker--light{color:var(--lime)}
+.visit p{max-width:620px;font-size:18px;line-height:1.6;color:rgba(255,255,255,.82)}
+.visit-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+.footer{background:#081f1a;color:#fff;padding:70px 0 26px}
+.footer-top{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:40px}
+.brand--footer img{filter:brightness(0) invert(1);width:130px}
+.footer-col{display:grid;gap:12px;align-content:start}
+.footer-col h3{font:800 14px "Manrope";color:var(--lime);margin:0 0 8px}
+.footer-col a{font-size:14px;color:rgba(255,255,255,.72)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid rgba(255,255,255,.12);margin-top:50px;padding-top:24px;font-size:12px;color:rgba(255,255,255,.5)}
+
+@media(max-width:900px){
+  .desktop-nav,.desktop-only{display:none}
+  .menu-btn{display:flex}
+  .hero-bottom{grid-template-columns:1fr 1fr}
+  .scroll-hint{display:none}
+  .intro-grid,.section-head,.experience-grid{grid-template-columns:1fr;gap:30px}
+  .feature-strip{grid-template-columns:1fr}
+  .feature-strip article+article{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .segment-grid{grid-template-columns:1fr;grid-template-rows:none}
+  .segment-card--large,.segment-card--wide{grid-row:auto;grid-column:auto}
+  .segment-card{min-height:430px}
+  .experience-image{min-height:520px}
+  .floating-note{right:20px}
+  .news-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .container{width:min(100% - 28px,1180px)}
+  .site-header{padding:12px 0}
+  .brand img{width:96px}
+  .hero{min-height:820px}
+  .hero-content{padding-top:120px;padding-bottom:180px;margin-left:14px}
+  .hero h1{font-size:clamp(46px,15vw,64px)}
+  .hero p{font-size:17px}
+  .hero-actions,.visit-actions{flex-direction:column;align-items:stretch}
+  .hero-bottom{bottom:24px;grid-template-columns:1fr;gap:10px}
+  .hero-stat:nth-child(2){display:none}
+  .section{padding:80px 0}
+  h2{font-size:42px}
+  .segment-card{min-height:360px}
+  .experience-image{min-height:420px}
+  .floating-note{position:static;width:auto;margin-top:12px}
+  .quote-grid{grid-template-columns:1fr}
+  .quote-mark{font-size:76px;height:52px}
+  .news-image{height:220px}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column}
+}
