@@ -259,3 +259,10 @@ blockquote footer{margin-top:24px;font:600 14px "DM Sans";letter-spacing:0;color
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column}
 }
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
