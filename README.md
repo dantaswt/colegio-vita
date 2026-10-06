@@ -1,36 +1,21 @@
-# Colégio Vita — Redesign Concept
+# Daegon School
 
-Reimaginação moderna e responsiva do site do Colégio Vita, desenvolvida como projeto de portfólio.
+Projeto autoral de site institucional para uma escola fictícia, criado para portfólio.
 
 ## Objetivo
+Demonstrar uma experiência digital escolar moderna, responsiva e orientada à conversão, com:
 
-Transformar a presença digital atual do Vita em uma experiência mais contemporânea, clara e responsiva, preservando a identidade institucional e destacando:
-
-- proposta pedagógica;
+- apresentação institucional;
 - segmentos educacionais;
-- diferenciais da experiência Vita;
+- diferenciais pedagógicos;
 - notícias e vida escolar;
-- agendamento de visita;
-- acessos rápidos para famílias e alunos.
+- visita virtual conceitual;
+- acesso rápido a portal, matrícula e contato.
 
 ## Stack
-
 - HTML5
 - CSS3
-- JavaScript vanilla
+- JavaScript
 
-## Direção visual
-
-Interface editorial e premium, com foco em:
-
-- tipografia forte;
-- grandes imagens;
-- responsividade mobile-first;
-- navegação simples;
-- CTAs claros;
-- animações sutis;
-- acessibilidade e redução de movimento.
-
-## Aviso
-
-Projeto conceitual de redesign, não oficial, criado para fins de portfólio. Conteúdos e imagens institucionais pertencem aos seus respectivos proprietários.
+## Identidade
+Todo o conteúdo, naming e identidade do projeto foram convertidos para **Daegon School**. O projeto não representa nem utiliza a identidade de uma instituição real.
